@@ -12,7 +12,6 @@ else
 {
     double[] point1 = new double[enterVar];
     double[] point2 = new double[enterVar];
-    double power = 2;
     double distance = 0;
 
     Console.WriteLine("Введите координаты первой точки: ");
@@ -31,8 +30,8 @@ else
         i++;
     }
 
-    double distanceX = Math.Pow(Math.Abs(point1[0] - point2[0]), power);
-    double distanceY = Math.Pow(Math.Abs(point1[1] - point2[1]), power);
+    double distanceX = (point1[0] - point2[0]) * (point1[0] - point2[0]);
+    double distanceY = (point1[1] - point2[1]) * (point1[1] - point2[1]);
 
     if (enterVar == 2)
     {
@@ -41,7 +40,7 @@ else
     }
     else if (enterVar == 3)
     {
-        double distanceZ = Math.Pow(Math.Abs(point1[2] - point2[2]), power);
+        double distanceZ = (point1[2] - point2[2]) * (point1[2] - point2[2]);
         distance = Math.Sqrt(distanceX + distanceY + distanceZ);
         Console.WriteLine("расстояние между точками равно: " + distance);
     }
